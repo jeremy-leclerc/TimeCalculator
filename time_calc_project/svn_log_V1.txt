@@ -1,0 +1,20 @@
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ svn log -v ./../tags/V1.0/
+------------------------------------------------------------------------
+r23 | jnl570@USASK.CA | 2018-11-30 16:15:21 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/tags/V1.0 (from /time_calc/trunk:22)
+
+Tagging first running version as 1.0
+------------------------------------------------------------------------
+r22 | jnl570@USASK.CA | 2018-11-30 15:39:40 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/time_calc.c
+
+Added time_calc.c to trunk
+------------------------------------------------------------------------
+r20 | jnl570@USASK.CA | 2018-11-30 15:35:00 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk
+
+Added trunk subdirectory
+------------------------------------------------------------------------

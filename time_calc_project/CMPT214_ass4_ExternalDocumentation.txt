@@ -1,0 +1,91 @@
+Jeremy Leclerc
+jnl570
+11246740
+CMPT214
+Assignment 4
+calculator external documentation
+---------------------------------------
+
+How to execute:
+
+the calculator project can be executed from the LINIX/UNIX command line. Its pattern of use is:
+
+	calculator conv time 
+	calculator {add,subt,comp} time1 time2
+
+time, time1, and time2 are "time values". A time value is a number of seconds or a "time spec". A time spec is a string in the form:
+
+	n1y n2n n3d n4h n5m n6s
+	where, n1 < 100, n2 < 12, n3 < 31, n4 < 24, n5 < 60, n6 < 60
+
+n1-n6 are unsigned integers. The amount of white space between fields of the time spec are arbitrary.
+
+time_calc can perform five commands based on a "command keyword" given as the first argument:
+
+	- convert between a number of seconds and a time spec (conv command);
+	- add two time values and output the result as a time spec (add command);
+	- subtract two time values (i.e. time1 − time2) and output the result as a time spec (subt command); and
+	- compare two time values and output a result string (comp command).
+	- issue a help or usage message (help command).
+
+Time must be < 3155760000 or 99y11n30d10h30m00s
+
+the project can be executed from the command line with the following commands. (must be in a directory with the project files):
+
+#Create executable file
+make -f makefile calculator
+
+#execute file
+./calculator [command] [argument(s)]
+
+
+Design decisions:
+
+The orginal time_calc.c file (from assignment 3) was split up among the following files:
+	
+	seconds.c
+	seconds.h
+	time_arg.c
+	time_arg.h
+	time_calc.c
+	time_calc.h
+	time_spec.c
+	time_spec.h
+
+time_calc.c: contains the main() function and deals with the io of the 	program, as well as calling the functions to execute the given command.
+
+time_calc.h: declaration of types, functions, and constants that are needed for time_calc.c or any content that needs to be known across many modules.
+
+
+time_spec.c: Deals with converting string into a time spec
+
+time_spec.h: declaration of types, functions, and constant that are needed in time_spec.c as well as other modules
+
+seconds.c: deals with converting string into a number of seconds
+
+seconds.h: declaration of types, functions, and constant that are needed in seconds.c as well as other modules
+
+time_arg.c: deals with converting time spec to seconds, and seconds to time spec
+
+time_arg.h: declaration of types, functions, and constant that are needed in time_arg.c as well as other modules
+
+
+
+Assumptions:
+	- seconds in a minute	60
+	- seconds in a hour	3600
+	- seconds in a day	86400
+	- days in a year	365.25
+	- days in a month	30.4375
+	- seconds in a month	2629800
+	- seconds in a year	31557600
+
+
+
+
+Limitations:
+	- Seconds must be  < 3155760000
+ 	- Time spec must be  < 99y11n30d10h30m00s
+
+
+

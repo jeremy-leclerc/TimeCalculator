@@ -1,0 +1,44 @@
+Jeremys-MacBook-Pro:lsd jeremyleclerc$ svn log -v $SvnURL/lsd/tags/V1.0
+------------------------------------------------------------------------
+r56 | jnl570@USASK.CA | 2018-12-02 16:55:10 -0600 (Sun, 02 Dec 2018) | 1 line
+Changed paths:
+   A /lsd/tags/V1.0 (from /lsd/trunk:55)
+
+Tagging first fully running version of lsd as V1.0
+------------------------------------------------------------------------
+r55 | jnl570@USASK.CA | 2018-12-02 16:51:42 -0600 (Sun, 02 Dec 2018) | 1 line
+Changed paths:
+   M /lsd/trunk/lsd.sh
+
+fixed found bug in lsd.sh
+------------------------------------------------------------------------
+r54 | jnl570@USASK.CA | 2018-12-02 16:24:16 -0600 (Sun, 02 Dec 2018) | 1 line
+Changed paths:
+   M /lsd/trunk/lsd.sh
+
+added a check for non-existent directory arugment to lsd.sh
+------------------------------------------------------------------------
+r53 | jnl570@USASK.CA | 2018-12-02 16:21:10 -0600 (Sun, 02 Dec 2018) | 1 line
+Changed paths:
+   M /lsd/trunk/lsd.sh
+
+added a check for too many arguments to lsd.sh
+------------------------------------------------------------------------
+r52 | jnl570@USASK.CA | 2018-12-02 15:37:02 -0600 (Sun, 02 Dec 2018) | 1 line
+Changed paths:
+   M /lsd/trunk/lsd.sh
+
+got initial working script for lsd.sh
+------------------------------------------------------------------------
+r51 | jnl570@USASK.CA | 2018-12-02 14:55:51 -0600 (Sun, 02 Dec 2018) | 1 line
+Changed paths:
+   A /lsd/trunk/lsd.sh
+
+added initialized lsd.sh file to trunk
+------------------------------------------------------------------------
+r49 | jnl570@USASK.CA | 2018-12-02 14:54:09 -0600 (Sun, 02 Dec 2018) | 1 line
+Changed paths:
+   A /lsd/trunk
+
+added trunk subdirectory to lsd directory
+------------------------------------------------------------------------

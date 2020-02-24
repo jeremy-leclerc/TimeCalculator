@@ -1,0 +1,159 @@
+Jeremy Leclerc
+jnl570
+11246740
+CMPT214
+Assignment 4
+Question 3
+lsd.sh test output annotations
+-------------------------------------
+
+//Simple test without any arguments
+jnl570@tux8:~/214ass1> ls -l
+total 12
+-rw-r----- 1 jnl570 student    4 Oct  9 20:35 myfile.txt
+-rw-r----- 1 jnl570 student 1308 Oct  9 21:26 q2_re.txt
+drwxrwxrwx 2 jnl570 student 4096 Oct  9 21:36 test/
+jnl570@tux8:~/214ass1> sh ./../lsd.sh 
+test
+
+//Simple test with cwd (.) argument
+jnl570@tux8:~/214ass1> ls -l
+total 12
+-rw-r----- 1 jnl570 student    4 Oct  9 20:35 myfile.txt
+-rw-r----- 1 jnl570 student 1308 Oct  9 21:26 q2_re.txt
+drwxrwxrwx 2 jnl570 student 4096 Oct  9 21:36 test/
+jnl570@tux8:~/214ass1> sh ./../lsd.sh .
+test
+
+//Simple test with directory as an argument
+jnl570@tux8:~> ls -l 214ass1
+total 12
+-rw-r----- 1 jnl570 student    4 Oct  9 20:35 myfile.txt
+-rw-r----- 1 jnl570 student 1308 Oct  9 21:26 q2_re.txt
+drwxrwxrwx 2 jnl570 student 4096 Oct  9 21:36 test/
+jnl570@tux8:~> sh lsd.sh 214ass1
+test
+
+//Test with 1 too many arguments
+jnl570@tux8:~> ls -l 214ass1
+total 12
+-rw-r----- 1 jnl570 student    4 Oct  9 20:35 myfile.txt
+-rw-r----- 1 jnl570 student 1308 Oct  9 21:26 q2_re.txt
+drwxrwxrwx 2 jnl570 student 4096 Oct  9 21:36 test/
+jnl570@tux8:~> sh lsd.sh 214ass1 extra
+ERROR: Too may arguments
+
+//Test with many arguments 
+jnl570@tux8:~> ls -l 214ass1
+total 12
+-rw-r----- 1 jnl570 student    4 Oct  9 20:35 myfile.txt
+-rw-r----- 1 jnl570 student 1308 Oct  9 21:26 q2_re.txt
+drwxrwxrwx 2 jnl570 student 4096 Oct  9 21:36 test/
+jnl570@tux8:~> sh lsd.sh 214ass1 extra 1 2 3 4 5 6 7
+ERROR: Too may arguments
+
+//Test with non-existent directory
+jnl570@tux8:~> ls asd
+ls: cannot access 'asd': No such file or directory
+jnl570@tux8:~> sh lsd.sh asd          
+ERROR: Directory does not exist
+
+//Test for exit status after success
+jnl570@tux8:~> echo $?   
+0
+jnl570@tux8:~> ls -l 214ass1
+total 12
+-rw-r----- 1 jnl570 student    4 Oct  9 20:35 myfile.txt
+-rw-r----- 1 jnl570 student 1308 Oct  9 21:26 q2_re.txt
+drwxrwxrwx 2 jnl570 student 4096 Oct  9 21:36 test/
+jnl570@tux8:~> sh lsd.sh 214ass1
+test
+jnl570@tux8:~> echo $?
+0
+
+//Test for exit status after too many arguments
+jnl570@tux8:~> echo $?
+0
+jnl570@tux8:~> ls -l 214ass1
+total 12
+-rw-r----- 1 jnl570 student    4 Oct  9 20:35 myfile.txt
+-rw-r----- 1 jnl570 student 1308 Oct  9 21:26 q2_re.txt
+drwxrwxrwx 2 jnl570 student 4096 Oct  9 21:36 test/
+jnl570@tux8:~> sh lsd.sh 214ass1 1 2 3 4 5
+ERROR: Too may arguments
+jnl570@tux8:~> echo $?
+1
+
+//Test for exit status after non-existent directory
+jnl570@tux8:~> ls DOESNTEXIST
+ls: cannot access 'DOESNTEXIST': No such file or directory
+jnl570@tux8:~> echo
+
+jnl570@tux8:~> echo $?
+0
+jnl570@tux8:~> sh lsd.sh DOESNTEXIST
+ERROR: Directory does not exist
+jnl570@tux8:~> echo $?
+1
+
+//Test with varying r/w/x permissions
+jnl570@tux8:/> pwd
+/
+jnl570@tux8:/> ls -l
+total 5061848
+lrwxrwxrwx.    1 root root          7 Feb  7  2018 bin -> usr/bin/
+dr-xr-xr-x.    6 root root       4096 Dec  1 19:18 boot/
+-rw-------     1 root root  511586304 Nov 13 18:07 core.11198
+-rw-------     1 root root  662749184 Oct 26 17:09 core.16896
+-rw-------     1 root root  408887296 Oct 27 17:12 core.17140
+-rw-------     1 root root  130998272 Oct 24 17:04 core.22318
+-rw-------     1 root root  231620608 Nov 23 14:10 core.29227
+-rw-------     1 root root  146116608 Oct 27 17:12 core.31117
+-rw-------     1 root root  145981440 Oct 27 17:13 core.31185
+-rw-------     1 root root  532848640 Oct 28 17:14 core.32091
+-rw-------     1 root root  817557504 Oct 24 17:00 core.33296
+-rw-------     1 root root  307683328 Oct 29 20:19 core.33878
+-rw-------     1 root root   84938752 Oct 28 18:44 core.42067
+-rw-------     1 root root  628432896 Nov 10 17:58 core.43339
+-rw-------     1 root root 1029607424 Nov  8 17:49 core.46192
+-rw-------     1 root root  472662016 Nov  3 17:32 core.7017
+drwxr-xr-x    20 root root       4060 Dec  1 19:18 dev/
+drwxr-xr-x.  200 root root      12288 Dec  1 19:18 etc/
+dr-xr-xr-x    46 root root       4096 Aug 27 13:13 faculty/
+lrwxrwxrwx     1 root root          8 Sep 27 14:14 grad -> /student/
+drwxr-xr-x    74 root root       4096 Nov  5 13:42 guests/
+drwxr-xr-x.    4 root root       4096 Aug 28 12:55 home/
+lrwxrwxrwx.    1 root root          7 Feb  7  2018 lib -> usr/lib/
+lrwxrwxrwx.    1 root root          9 Feb  7  2018 lib64 -> usr/lib64/
+drwx------.    2 root root      16384 Aug 22 13:42 lost+found/
+drwxr-xr-x.    2 root root       4096 Feb  7  2018 media/
+drwxr-xr-x.    2 root root       4096 Feb  7  2018 mnt/
+drwxr-xr-x.    3 root root       4096 Sep 27 14:12 opt/
+dr-xr-xr-x  1136 root root          0 Sep 27 08:25 proc/
+drwxr-xr-x    23 root root       4096 Apr 25  2018 project/
+dr-xr-x---.   37 root root       4096 Nov 19 13:58 root/
+drwxr-xr-x    61 root root       1700 Dec  1 20:18 run/
+lrwxrwxrwx.    1 root root          8 Feb  7  2018 sbin -> usr/sbin/
+drwxr-xr-x.    2 root root       4096 Feb  7  2018 srv/
+drwxr-xr-x    58 root root       4096 Nov 14 12:54 staff/
+drwxr-xr-x  1729 root root     114688 Nov 30 22:05 student/
+dr-xr-xr-x    13 root root          0 Sep 28 09:20 sys/
+drwxrwxrwt   193 root root       4200 Dec  2 16:42 tmp/
+dr-xr-xr-x     3 root root       4096 Aug 27 13:13 tmp_mnt/
+drwxr-xr-x     3 root root       4096 Sep 27 14:12 u1/
+drwxr-xr-x.   13 root root       4096 Sep 27 14:13 usr/
+drwxr-xr-x.   22 root root       4096 Sep 27 14:25 var/
+dr-xr-xr-x     3 root root       4096 Sep 27 14:10 www/
+jnl570@tux8:/> sh ./student/jnl570/lsd.sh .
+boot        guests      mnt         root        student     u1
+dev         home        opt         run         sys         usr
+etc         lost+found  proc        srv         tmp         var
+faculty     media       project     staff       tmp_mnt     www
+
+
+
+
+
+
+
+

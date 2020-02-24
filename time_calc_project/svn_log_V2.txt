@@ -1,0 +1,193 @@
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ svn log -v $SvnURL/time_calc/tags/V2.0
+------------------------------------------------------------------------
+r57 | jnl570@USASK.CA | 2018-12-02 18:24:11 -0600 (Sun, 02 Dec 2018) | 1 line
+Changed paths:
+   A /time_calc/tags/V2.0 (from /time_calc/trunk:56)
+
+Tagging running version as 2.0
+------------------------------------------------------------------------
+r47 | jnl570@USASK.CA | 2018-12-02 14:37:10 -0600 (Sun, 02 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/makefile
+   M /time_calc/trunk/time_arg.c
+   M /time_calc/trunk/time_spec.c
+
+edited documentation
+------------------------------------------------------------------------
+r46 | jnl570@USASK.CA | 2018-12-01 12:31:53 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/makefile
+
+variable CC to makefile
+------------------------------------------------------------------------
+r45 | jnl570@USASK.CA | 2018-12-01 12:29:42 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/makefile
+
+variable CFLAGS to makefile
+------------------------------------------------------------------------
+r44 | jnl570@USASK.CA | 2018-12-01 12:23:13 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/makefile
+
+Added .PHONY funcitonality to makefile
+------------------------------------------------------------------------
+r43 | jnl570@USASK.CA | 2018-12-01 12:20:06 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/makefile
+
+Added "clean" function to makefile
+------------------------------------------------------------------------
+r42 | jnl570@USASK.CA | 2018-12-01 12:07:31 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/seconds.h
+   M /time_calc/trunk/time_arg.h
+   M /time_calc/trunk/time_calc.c
+   M /time_calc/trunk/time_calc.h
+   M /time_calc/trunk/time_spec.h
+
+added documentation
+------------------------------------------------------------------------
+r41 | jnl570@USASK.CA | 2018-12-01 11:41:48 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/time_spec.c
+   M /time_calc/trunk/time_spec.h
+
+modified time_spec.c and time_spec.h
+------------------------------------------------------------------------
+r40 | jnl570@USASK.CA | 2018-12-01 01:27:32 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/seconds.c
+   M /time_calc/trunk/seconds.h
+   M /time_calc/trunk/time_arg.h
+   M /time_calc/trunk/time_calc.c
+   M /time_calc/trunk/time_calc.h
+   M /time_calc/trunk/time_spec.h
+
+cleaned up code and comment
+------------------------------------------------------------------------
+r39 | jnl570@USASK.CA | 2018-12-01 00:38:16 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/time_arg.c
+   M /time_calc/trunk/time_arg.h
+   M /time_calc/trunk/time_calc.c
+   M /time_calc/trunk/time_calc.h
+
+finished creating time_arg.c and time_arg.h
+------------------------------------------------------------------------
+r38 | jnl570@USASK.CA | 2018-12-01 00:29:18 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/time_arg.h
+   M /time_calc/trunk/time_calc.c
+
+move functions from time_calc.c and set up with time_arg.c and time_arg.h
+------------------------------------------------------------------------
+r37 | jnl570@USASK.CA | 2018-12-01 00:24:08 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/makefile
+   M /time_calc/trunk/time_arg.c
+   M /time_calc/trunk/time_arg.h
+   M /time_calc/trunk/time_calc.c
+
+updated makefile for compiling time_arg.c and time_arg.h.
+------------------------------------------------------------------------
+r36 | jnl570@USASK.CA | 2018-12-01 00:17:11 -0600 (Sat, 01 Dec 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/makefile
+   M /time_calc/trunk/seconds.c
+   M /time_calc/trunk/seconds.h
+   M /time_calc/trunk/time_calc.c
+   M /time_calc/trunk/time_calc.h
+   M /time_calc/trunk/time_spec.h
+
+Moved functions from time_calc.c to seconds.c and seconds.h, also updated makefile.
+------------------------------------------------------------------------
+r35 | jnl570@USASK.CA | 2018-11-30 18:19:32 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/makefile
+
+added comments to makefile
+------------------------------------------------------------------------
+r34 | jnl570@USASK.CA | 2018-11-30 18:18:13 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/time_calc.c
+
+edited comments in time_calc.c
+------------------------------------------------------------------------
+r33 | jnl570@USASK.CA | 2018-11-30 18:12:35 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   M /time_calc/trunk/makefile
+   M /time_calc/trunk/seconds.h
+   M /time_calc/trunk/time_calc.c
+   M /time_calc/trunk/time_calc.h
+   M /time_calc/trunk/time_spec.c
+   M /time_calc/trunk/time_spec.h
+
+put methods for time_spec into time_spec.c and definitions into time_spec.h, also updated makefile to compile program
+------------------------------------------------------------------------
+r32 | jnl570@USASK.CA | 2018-11-30 16:55:10 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/time_calc.h
+
+Added time_calc.h file
+------------------------------------------------------------------------
+r31 | jnl570@USASK.CA | 2018-11-30 16:54:20 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/test_time_calc.c
+
+Added test_time_calc.c file
+------------------------------------------------------------------------
+r30 | jnl570@USASK.CA | 2018-11-30 16:53:35 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/seconds.h
+
+Added seconds.h file
+------------------------------------------------------------------------
+r29 | jnl570@USASK.CA | 2018-11-30 16:53:23 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/seconds.c
+
+Added seconds.c file
+------------------------------------------------------------------------
+r28 | jnl570@USASK.CA | 2018-11-30 16:52:49 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/time_spec.h
+
+Added time_spec.h file
+------------------------------------------------------------------------
+r27 | jnl570@USASK.CA | 2018-11-30 16:52:35 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/time_spec.c
+
+Added time_spec.c file
+------------------------------------------------------------------------
+r26 | jnl570@USASK.CA | 2018-11-30 16:51:54 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/time_arg.h
+
+Added time_arg.h file
+------------------------------------------------------------------------
+r25 | jnl570@USASK.CA | 2018-11-30 16:51:24 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/time_arg.c
+
+Added time_arg.c file
+------------------------------------------------------------------------
+r24 | jnl570@USASK.CA | 2018-11-30 16:39:33 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/makefile
+
+Added initial makefile
+------------------------------------------------------------------------
+r22 | jnl570@USASK.CA | 2018-11-30 15:39:40 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk/time_calc.c
+
+Added time_calc.c to trunk
+------------------------------------------------------------------------
+r20 | jnl570@USASK.CA | 2018-11-30 15:35:00 -0600 (Fri, 30 Nov 2018) | 1 line
+Changed paths:
+   A /time_calc/trunk
+
+Added trunk subdirectory
+------------------------------------------------------------------------

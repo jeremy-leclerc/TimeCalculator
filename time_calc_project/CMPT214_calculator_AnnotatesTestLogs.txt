@@ -1,0 +1,269 @@
+Jeremy Leclerc
+jnl570
+11246740
+CMPT214
+Assignment 4
+Annotated test logs for calculator
+---------------------------------
+
+// program should succeed, output '0'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 0y0n0d0h0m0s
+0
+// test successful
+
+// program should succeed, output '0'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 00y00n00d00h00m00s
+0
+// test successful
+
+// program should succeed, output '37091100'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '01y 02n  03d   4h     5m00s '
+37091100
+// test successful
+
+//should output '0y 0n 0d 0h23m20s'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 1400
+0y 0n 0d 0h 23m 20s
+//test successful
+
+// program should succeed, output '34277461'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 1y1n1d1h1m1s
+34277461
+// test successful
+
+// program should succeed, output '1y 1n 1d 1h 1m 1s'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 34277461
+1y 1n 1d 1h 1m 1s
+// test successful
+
+// program should succeed, output '3155759999'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 99y11n30d10h29m59s
+3155759999
+// test successful
+
+// program should succeed, output '99y11n30d10h29m59s'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 3155759999
+99y 11n 30d 10h 29m 59s
+// test successful
+
+//Should output 1712134365
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv "54y 3n 01d 13h 22m45s"
+1712134365
+//test successful
+
+//Basic add test
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator add 1 1
+0y 0n 0d 0h 0m 2s
+//test successful
+
+//Basic add test with time specs
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator add "0y0n0d0h0m10s" "0y0n0d0h0m50s"
+0y 0n 0d 0h 1m 0s
+//test successful
+
+
+// program should succeed, output '1y 1n 1d 1h 1m 2s'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator add 34277461 1
+1y 1n 1d 1h 1m 2s
+// test successful
+
+//basic subtract
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator subt 10 5
+0y 0n 0d 0h 0m 5s
+//test successful
+
+// program should succeed, output '1y 1n 1d 1h 1m 0s'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator subt 34277461 1
+1y 1n 1d 1h 1m 0s
+// test successful
+
+//basic subtract with time specs
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator subt "10y 10n 10d 10h 10m 10s" "5y 5n 5d 5h 5m 5s"
+5y 5n 5d 5h 5m 5s
+//test successful
+
+//Basic subtract with mix of time spec and seconds
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator subt "10y 10n 10d 10h 10m 10s" 1
+10y 10n 10d 10h 10m 9s
+//test successful
+
+// program should succeed, times are equal
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator comp 34277461 '1y 1n 1d 1h 1m 1s'
+Equal
+// test successful
+
+// program should succeed, first time is less
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator comp 34277460 '1y 1n 1d 1h 1m 1s'
+Less
+// test successful
+
+// program should succeed, first time is greater
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator comp 44277461 '0y 1n 1d 1h 1m 0s'
+Greater
+// test successful
+
+//Compare mix of time spec and seconds equal
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator comp "0y 0n 0d 0h 0m 10s" 10
+Equal
+//test successful
+
+//Compare mix of time spec and seconds less than
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator comp "0y 0n 0d 0h 0m 10s" 12345
+Less
+//test successful
+
+//Compare mix of time spec and seconds greater
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator comp "99y 0n 0d 0h 0m 10s" 12345
+Greater
+//test successful
+
+//Test "00y00n00d00h00m00s"
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv "00y00n00d00h00m00s" 
+0
+//test successful
+
+// program should succeed, output '1y 1n 1d 1h 1m 1s'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator subt '2y2n2d2h2m2s' '1y 1n 1d 1h 1m 1s'
+1y 1n 1d 1h 1m 1s
+// test successful
+
+// program should succeed, output '1y 0n 0d 0h 0m 0s'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 31557600
+1y 0n 0d 0h 0m 0s
+// test successful
+
+// program should succeed, output '0y 1n 0d 0h 0m 0s'
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 2629800
+0y 1n 0d 0h 0m 0s
+// test successful
+
+//**********NOTE: following test should fail****************
+
+//Should not succeed, exceed limit
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 3155760000
+Error: '3155760000' not a legal time string or time spec.
+
+//Should not succeed, exceed limit
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 99y11n30d10h30m00s
+Error: Time range exceeded.
+
+//Should not succeed, too few arguments.
+Jeremys-MacBook-Pro:214ass3 jeremyleclerc$ ./calculator conv
+Error: Too few arguments.
+Usage: time_calc help
+ time_calc conv <time>
+ time_calc {add,subt,comp} <time1> <time2>
+
+//Should not succeed, too many arguments.
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv 1234 1234 12345
+Error: Too many arguments.
+Usage: time_calc help
+ time_calc conv <time>
+ time_calc {add,subt,comp} <time1> <time2>
+
+
+//should not succeed no command given
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator 1234 1234
+Error: command '1234' not recognized
+Usage: time_calc help
+ time_calc conv <time>
+ time_calc {add,subt,comp} <time1> <time2>
+
+//not succeed too many arguments
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator subt 112 1233 13
+Error: Too many arguments.
+Usage: time_calc help
+ time_calc conv <time>
+ time_calc {add,subt,comp} <time1> <time2>
+
+//should fail, time outside range
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator add 3155759999 1
+Error: Time range exceeded.
+
+//should fail, time range exceeded
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator add 3155758200 1139209097
+Error: Time range exceeded.
+
+//Should fail, outside time range
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99y 11n 30d 23h 59m 58s'
+Error: Time range exceeded.
+
+//should fail, not a valid spec
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99y 11n 30d 23h2s'
+Error: '99y 11n 30d 23h2s' not a legal time string or time spec.
+
+//Should fail, not a valid spec 
+Jeremys-MacBook-Pro:trunk jeremyleclerc$  ./calculator conv 'asd99y 11n 30d 23h 00m 60s'
+Error: 'asd99y 11n 30d 23h 00m 60s' not a legal time string or time spec.
+
+//Should fail, not a valid spec 
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '9y11n30d23h59m57ssdfghj'
+Error: '9y11n30d23h59m57ssdfghj' not a legal time string or time spec.
+
+//should fail, outside valid range
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '100y 11n 30d 23h 59m 54s'
+Error: '100y 11n 30d 23h 59m 54s' not a legal time string or time spec.
+
+//should fail, outside valid range
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99y 12n 30d 23h 59m 54s'
+Error: '99y 12n 30d 23h 59m 54s' not a legal time string or time spec.
+
+//should fail, outside valid range
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99y 11n 31d 23h 59m 54s'
+Error: '99y 11n 31d 23h 59m 54s' not a legal time string or time spec.
+
+//should fail, outside valid range
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99y 11n 30d 24h 59m 54s'
+Error: '99y 11n 30d 24h 59m 54s' not a legal time string or time spec.
+
+//should fail, outside valid range
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99y 11n 30d 24h 59m 54s'
+Error: '99y 11n 30d 24h 59m 54s' not a legal time string or time spec.
+
+//should fail, outside valid range
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99y 11n 30d 23h 60m 54s'
+Error: '99y 11n 30d 23h 60m 54s' not a legal time string or time spec.
+
+//should fail, outside valid range
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99y 11n 30d 23h 59m 55s'
+Error: Time range exceeded.
+
+//should fail, outside valid range
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99y 11n 30d 23h 00m 60s'
+Error: '99y 11n 30d 23h 00m 60s' not a legal time string or time spec.
+
+//should fail, not a valid time spec
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99 11n 30d 23h 00m 60s'
+Error: '99 11n 30d 23h 00m 60s' not a legal time string or time spec.
+
+//should fail, not a valid time spec
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '-99 11n 30d 23h 00m 60s'
+Error: '-99 11n 30d 23h 00m 60s' not a legal time string or time spec.
+
+//should fail, not a valid time spec
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv '99 11n 30d -23h 00m 60s'
+Error: '99 11n 30d -23h 00m 60s' not a legal time string or time spec.
+
+//should fail, not a valid time
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator conv -214
+Error: '-214' not a legal time string or time spec.
+
+//should fail, not a valid time
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator add -21 4
+Error arguments are not a legal time spec or seconds.
+
+//should fail, not a valid time
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator subt -21 4
+Error arguments are not a legal time spec or seconds.
+
+//should fail, not a valid time
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator comp -21 4
+Error arguments are not a legal time spec or seconds.
+
+//should fail, limit would be exceeded
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator add 99y11n30d10h29m59s 1
+Error: Time range exceeded.
+
+//should fail, negative number not allowed
+Jeremys-MacBook-Pro:trunk jeremyleclerc$ ./calculator subt 3 100
+Error: Negative time not allowed.
